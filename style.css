@@ -1,0 +1,449 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Netflix Sans', sans-serif;
+    /* font-size: 1px; */
+
+}
+
+body {
+    background-color: black;
+    color: white;
+    overflow-x: hidden;
+}
+
+@font-face {
+    font-family: 'Netflix Sans';
+    src: url(font/NetflixSans-Regular.otf);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80vw;
+    margin: auto;
+    padding: 20px 0;
+    background-color: transparent;
+}
+
+nav .logo img {
+    width: 150px;
+}
+
+nav .btns {
+    display: flex;
+    gap: 10px;
+}
+
+.sign button {
+    background-color: #e50914;
+    color: white;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.lang section {
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+    gap: 8px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(133, 133, 133, 0.5);
+    border-radius: 5px;
+}
+
+.lang section select {
+    background-color: transparent;
+    color: white;
+    border: none;
+    appearance: none;
+    font-size: 16px;
+    line-height: 20px;
+    border-radius: 5px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+#bg {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+}
+
+.first {
+    position: relative;
+    height: 95vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.first .content {
+    width: 40vw;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 65vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 140px;
+}
+
+.first .content h1 {
+    font-size: 56px;
+    line-height: 70px;
+    font-weight: 900;
+}
+
+.first .content h3 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.first .content p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.first .content .email {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    /* margin-top: 10px; */
+}
+
+.first .content .email input {
+    width: 70em;
+    padding: 15px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(18, 18, 18, 0.5);
+    border: 1px solid rgba(133, 133, 133, 0.5);
+}
+
+.first .content .email button {
+    display: flex;
+    background-color: #e50914;
+    color: white;
+    font-size: 24px;
+    line-height: 24px;
+    padding: 15px 25px 15px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.first .content .email button img {
+    margin-left: 10px;
+}
+
+.curveContainer {
+    width: 100%;
+    height: 5%;
+    overflow: hidden;
+    line-height: 0;
+    position: absolute;
+    bottom: 0;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+}
+
+.curve {
+    position: relative;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to right, rgba(33, 13, 22, 1) 16%, rgba(184, 40, 105, 1), rgba(229, 9, 20, 1), rgba(184, 40, 105, 1), rgba(33, 13, 22, 1) 84%);
+    height: 100%;
+    border-radius: 100% 100% 0% 0%;
+}
+
+.cover {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    top: 5px;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(50% 500% at 50% -420%, rgba(64, 97, 231, 0.4) 80%, rgba(0, 0, 0, 0.1) 100%), black;
+    border-radius: 100% 100% 0% 0%;
+    overflow: hidden;
+}
+
+.second {
+    width: 80vw;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 0;
+}
+
+.second h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.shows {
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin: 10px 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    overflow-y: hidden;
+}
+
+.shows::-webkit-scrollbar {
+    display: none;
+}
+
+.shows img {
+    width: 200px;
+    height: auto;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.shows img:hover {
+    transform: scale(1.05);
+}
+
+.shows span {
+    position: relative;
+    z-index: 5;
+    font-size: 6em;
+    font-weight: 900;
+    -webkit-text-stroke: 1px white;
+    transform: translate(40px, 140px);
+    cursor: pointer;
+    -webkit-text-fill-color: black;
+}
+
+.more {
+    display: flex;
+    flex-direction: row;
+
+    gap: 20px;
+}
+
+.itemcontainer {
+    justify-content: space-between;
+    width: 80vw;
+    height: 280px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.itemcontainer .item {
+    background: linear-gradient(149deg, #192247 0%, #210e17 96.86%);
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.item .text {
+    justify-content: center;
+    align-items: start;
+    text-align: start;
+    height: 70%;
+
+}
+
+.item .text h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.item .text p {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.item .icon {
+    bottom: 0;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+
+}
+
+.third {
+    width: 80vw;
+    height: auto;
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px 0;
+}
+
+.third .faq {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.third h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.faq .qna {
+    background-color: rgb(38, 34, 34);
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.qna .q {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.q img {
+    filter: invert(1);
+}
+
+.q h3 {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.third .content {
+    width: 50vw;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 80px;
+
+}
+
+.third .content p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.third .content .email {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    /* margin-top: 10px; */
+}
+
+.third .content .email input {
+    width: 70em;
+    padding: 15px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(18, 18, 18, 0.5);
+    border: 1px solid rgba(133, 133, 133, 0.5);
+}
+
+.third .content .email button {
+    display: flex;
+    background-color: #e50914;
+    color: white;
+    font-size: 24px;
+    line-height: 24px;
+    padding: 15px 25px 15px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.third .content .email button img {
+    margin-left: 10px;
+}
+footer {
+    width: 80vw;
+    height: auto;
+    margin: auto;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+footer p {
+    font-size: 16px;
+    font-weight: 400;
+    color: gray;
+}
+footer .links {
+    margin: 40px 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, auto);
+    gap: 10px;
+}
+.linkcolumn ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+footer .links .linkcolumn ul li a {
+    font-size: 14px;
+    font-weight: 400;
+    color: gray;
+    text-decoration: none;
+    cursor: pointer;
+}
+footer .links a:hover {
+    text-decoration: underline;
+}
+footer .lang section {
+    width: 100px;
+    justify-content: center;
+}
+footer .lang section select {
+    width: 100%;
+    text-align: center;
+}
+footer .end p{
+    font-size: 14px;
+    font-weight: 400;
+    color: gray;
+    cursor: pointer;
+    margin: 20px;
+}
+footer .end p {
+    font-size: 14px;
+    font-weight: 400;
+    color: gray;
+    cursor: pointer;
+    margin: 30px 0px;
+}
